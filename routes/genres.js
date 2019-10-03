@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const validateGenre = require('../utils/validateGenre.js');
+const validateGenre = require('../validators/validateGenre');
 
 const Genre = mongoose.model(
     'Genre',
