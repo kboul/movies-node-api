@@ -1,10 +1,19 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const app = express();
 const genres = require('./routes/genres');
 
+const options = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+};
+
+mongoose
+    .connect('mongodb://localhost/playground', options)
+    .then(() => console.log('Connected to MongoDB'))
+    .catch(err => console.error('Could not connect to MongoDB...', err));
+
 // enable parsing of JSON objects
-// in the body of the request by
-// adding a piece of middleware...
 app.use(express.json());
 
 app.use('/api/genres', genres);
