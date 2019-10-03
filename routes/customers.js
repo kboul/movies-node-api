@@ -49,3 +49,16 @@ router.post('/', async (req, res) => {
 });
 
 module.exports = router;
+
+router.get('/:id', async (req, res) => {
+    const customer = await Customer.findById(req.params.id);
+
+    if (!customer) {
+        res.status(404).send(
+            `The customer with the id ${req.params.id} was not found`
+        );
+        return;
+    }
+
+    res.send(customer);
+});
