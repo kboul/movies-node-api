@@ -4,7 +4,7 @@
         "commonjs": true,
         "es6": true
     },
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended", "airbnb", "prettier"],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly",
@@ -13,5 +13,10 @@
     "parserOptions": {
         "ecmaVersion": 2018
     },
-    "rules": {}
+    "plugins": ["prettier"],
+    "rules": {
+        "import/newline-after-import": "off",
+        "no-console": "off",
+        "radix": "off"
+    }
 }
