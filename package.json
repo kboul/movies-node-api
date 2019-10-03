@@ -1,13 +1,17 @@
 {
     "name": "movies-node-api",
     "version": "1.0.0",
-    "description": "",
+    "description": "Build a movies API similar to Mosh's Hamedani Node course",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "keywords": [],
-    "author": "",
+    "keywords": [
+        "node",
+        "express",
+        "mongodb"
+    ],
+    "author": "Konstantinos Voulgaridis",
     "license": "ISC",
     "devDependencies": {
         "eslint": "^6.1.0",
