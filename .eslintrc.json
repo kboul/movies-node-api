@@ -17,6 +17,7 @@
     "rules": {
         "import/newline-after-import": "off",
         "no-console": "off",
-        "radix": "off"
+        "radix": "off",
+        "no-underscore-dangle": "off"
     }
 }
