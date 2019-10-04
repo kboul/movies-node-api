@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Genre = require('../models/genre');
+const { Genre } = require('../models/genre');
 const validateGenre = require('../validators/validateGenre');
 
 router.get('/', async (req, res) => {
