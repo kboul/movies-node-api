@@ -1,11 +1,18 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const config = require('config');
 const genres = require('./routes/genres');
 const customers = require('./routes/customers');
 const movies = require('./routes/movies');
 const users = require('./routes/users');
 const auth = require('./routes/auth');
+
+// ensure jwtPrivateKey is defined
+if (!config.get('jwtPrivateKey')) {
+    console.error('FATAL ERROR: jwtPrivateKey is not defined');
+    process.exit(1); // exit the process
+}
 
 const options = {
     useNewUrlParser: true,
