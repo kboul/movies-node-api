@@ -52,6 +52,12 @@ select master branch
 npm install
 ```
 
+### Set jwtPrivateKey using env variable
+
+```
+export movies_node_api_jwtPrivateKey=myJwtPrivateKey
+```
+
 ### Start the server
 
 ```
