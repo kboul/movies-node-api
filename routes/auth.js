@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const validateAuth = require('../validators/validateAuth');
 
@@ -13,7 +14,7 @@ router.post('/', async (req, res) => {
     }
 
     // check if user is already registered
-    let user = await User.findOne({
+    const user = await User.findOne({
         email: req.body.email
     });
 
@@ -32,7 +33,14 @@ router.post('/', async (req, res) => {
         return;
     }
 
-    res.send(true);
+    const token = jwt.sign(
+        {
+            _id: user._id
+        },
+        'jwtPrivateKey'
+    );
+
+    res.send(token);
 });
 
 module.exports = router;
