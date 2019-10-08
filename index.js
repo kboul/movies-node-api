@@ -24,6 +24,8 @@ mongoose
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.error('Could not connect to MongoDB...', err));
 
+mongoose.set('useCreateIndex', true);
+
 // enable parsing of JSON objects
 app.use(express.json());
 
